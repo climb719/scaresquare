@@ -2,24 +2,28 @@ import { Component } from 'react'
 
 class Horror extends Component {
 
+    // initial state
+    state = {
+        votes: 0
+    }
+
+
     
-    
-    
-    onClick = (e) => {
-        console.log(this)
+    onVoteClick = () => {
+        this.setState({votes: this.state.votes + 1})
     }
    
 
-    
     render() {
-        const { title, year, descriptor, votes } = this.props
+        const { title, year, descriptor, id } = this.props
+        console.log(this.props)
     return (
-        <div class="card" >
+        <div className="card" id={id} >
             <h2>{title}</h2>
             <h3> {year}</h3>
             <p>{descriptor}</p>
-            <p>{votes} Votes</p>
-            <button onClick={this.onClick}>Vote</button>
+            <p>{this.state.votes} Votes</p>
+            <button onClick={this.onVoteClick}>Vote</button>
         </div>
         )
     }
