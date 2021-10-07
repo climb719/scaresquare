@@ -3,11 +3,11 @@ function Horror(props) {
     //console.log(props.id)
     return (
         <div class="card" >
-            <h2>{props.title}</h2>
-            <h3>{props.year}</h3>
-            <p>{props.descriptor} Likes </p>
-            <p>{props.votes} Votes </p>
-            <button class="vote-btn">Vote &lt;3</button>
+            <h2 class="title">{props.title}</h2>
+            <h3> {props.year}</h3>
+            <p>{props.descriptor}</p>
+            <p>{props.votes} Votes</p>
+            <button class="vote-btn">Vote</button>
         </div>
     )
 }
