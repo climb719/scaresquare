@@ -8,15 +8,12 @@ class HorrorList extends Component {
         horrors: []
     }
 
-    makeHorrorCards() {
-        console.log(horrorsObj.horrors)
-        //horrorObj.horrors.map((horror))
-    }
 
     render() {
+        const horrors = horrorsObj.horrors.map(horror => <Horror title={horror.title} year={horror.year} descriptor={horror.descriptor} votes={horror.votes}/>)
         return (
         <div id="horror-list">
-            {this.makeHorrorCards()}
+            {horrors}
         </div>
         )
     }
