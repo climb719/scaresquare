@@ -16,9 +16,9 @@ class Horror extends Component {
 
     render() {
         const { title, year, descriptor, id } = this.props
-        console.log(this.props)
+        //console.log(this.props)
     return (
-        <div className="card" id={id} >
+        <div className="card" key={id} >
             <h2>{title}</h2>
             <h3> {year}</h3>
             <p>{descriptor}</p>

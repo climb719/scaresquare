@@ -4,14 +4,17 @@ import HorrorList from './containers/HorrorList'
 
 function App() {
   return (
-    <div className="App">
+    <main>
+    <div>
       <header>
       <h1> Welcome to Scaresquare </h1>  
       <h4>Get scared, vote here:</h4>
       </header>
+  
         <HorrorList />
       
     </div>
+    </main>
   );
 }
 
