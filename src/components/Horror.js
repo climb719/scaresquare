@@ -1,6 +1,11 @@
-function Horror(props) {
-   // console.log(props)
-    //console.log(props.id)
+import { Component } from 'react'
+
+class Horror extends Component {
+   
+
+    
+    
+    render() {
     return (
         <div class="card" >
             <h2 class="title">{props.title}</h2>
@@ -9,7 +14,8 @@ function Horror(props) {
             <p>{props.votes} Votes</p>
             <button class="vote-btn">Vote</button>
         </div>
-    )
+        )
+    }
 }
 
 export default Horror
