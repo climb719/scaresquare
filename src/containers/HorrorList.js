@@ -11,6 +11,9 @@ class HorrorList extends Component {
 
     makeHorrorCard() {
         let horrorCards = this.state.horrors
+        if(this.state.search){
+            horrorCards = this.state.horrors.filter((horror) => horror.title.toLowerCase().startsWith(this.state.search.toLowerCase()))
+        }
         return horrorCards.map(horror => <Horror key={horror.id} title={horror.title} year={horror.year} descriptor={horror.descriptor} votes={horror.votes}/>)
     }
 
@@ -30,8 +33,6 @@ class HorrorList extends Component {
        // console.log(e.target.value)
         this.setState({search: e.target.value})
     }
-
-
 
     render() {
         //const horrors = horrorsObj.horrors.map(horror => <Horror title={horror.title} year={horror.year} descriptor={horror.descriptor} votes={horror.votes}/>)
