@@ -10,6 +10,14 @@ class HorrorList extends Component {
         search: ""
     }
 
+    addHorror = (horrorData) => {
+       this.setState((prevState) => {
+         return {
+            horrors: [...prevState.horrors, horrorData]
+         } 
+       })           
+   }
+
     makeHorrorCard() {
         let horrorCards = this.state.horrors
         if(this.state.search){
@@ -43,7 +51,7 @@ class HorrorList extends Component {
                 <label><strong>Search for a horror:</strong></label><br></br>
                 <input type="text"  onChange={this.handleSearchChange}/>
             </div>
-            <HorrorForm />
+            <HorrorForm addHorror={this.addHorror}/>
             {this.makeHorrorCard()}
         </div>
         )

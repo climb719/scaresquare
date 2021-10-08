@@ -21,9 +21,9 @@ export default class HorrorForm extends Component {
           })
           .then(resp => resp.json())
           .then(data => {
-              debugger
+              this.props.addHorror(data)
         //     console.log('Success:', data);
-        })
+       })
         //   .catch((error) => {
         //     console.error('Error:', error);
         //   });
