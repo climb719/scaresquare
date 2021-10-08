@@ -4,7 +4,7 @@
 }
 
 main {
-  margin-left: 15%;
+  margin-left: 17%;
   padding-left: 2%;
   border: 4px yellow solid;
   background-color: black;
@@ -15,6 +15,12 @@ main {
   left:2%;
   top:15%;
   
+}
+
+#horror-form {
+  position:absolute;
+  left:1%;
+  top:35%;
 }
 
 header {
