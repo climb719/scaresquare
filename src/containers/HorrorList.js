@@ -22,10 +22,10 @@ class HorrorList extends Component {
         const url ="http://localhost:3000/horrors"
         fetch(url)
         .then(resp => resp.json())
-        .then(json => {
+        .then(data=> {
            // console.log(json)
             this.setState({
-                horrors: json
+                horrors: data
             })
         })
     }

@@ -10,6 +10,23 @@ export default class HorrorForm extends Component {
 
     handleFormSubmit = (e) => {
         e.preventDefault()
+        const horror = {...this.state, votes: 0}
+        const url ="http://localhost:3000/horrors"
+        fetch(url, {
+            method: 'POST', 
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(horror),
+          })
+          .then(resp => resp.json())
+          .then(data => {
+              debugger
+        //     console.log('Success:', data);
+        })
+        //   .catch((error) => {
+        //     console.error('Error:', error);
+        //   });
         
     }
 
