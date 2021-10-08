@@ -1,6 +1,7 @@
 import { Component } from 'react'
 import Horror from '../components/Horror'
 //import horrorsObj from '../data'
+import HorrorForm from '../components/HorrorForm'
 
 class HorrorList extends Component {
 
@@ -42,6 +43,7 @@ class HorrorList extends Component {
                 <label><strong>Search for a horror:</strong></label><br></br>
                 <input type="text"  onChange={this.handleSearchChange}/>
             </div>
+            <HorrorForm />
             {this.makeHorrorCard()}
         </div>
         )
