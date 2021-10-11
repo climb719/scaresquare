@@ -11,16 +11,35 @@ main {
   padding-bottom: 10%;
 }
 #search {
-  position:absolute;
+  position: absolute;
   left:2%;
   top:15%;
   
 }
 
+#warning {
+  position: absolute;
+  left:1.5%;
+  top:25%;
+  right: 85%;
+  color: rgb(140, 6, 6); 
+  background-color: rgba(255, 253, 253, 0.6);
+  padding: 10px;
+
+}
+
+#warning:hover {
+  color: red;
+  border: red solid 1px;
+  background:#fff;
+
+}
+
+
 #horror-form {
   position:absolute;
   left:1%;
-  top:35%;
+  top:55%;
 }
 
 header {

@@ -95,8 +95,9 @@ class HorrorList extends Component {
         <div id="horror-list">
             <div id= "search">
                 <label><strong>Search for a horror:</strong></label><br></br>
-                <input type="text"  onChange={this.handleSearchChange}/>
+                <input type="text"  onChange={this.handleSearchChange}/> 
             </div>
+            <p id= "warning"><strong >Warning: </strong>You must search for a title to make sure it does not exist on Scaresquare before adding it below. If YOU cause duplicate entries, destruction will follow...</p>
             <HorrorForm addHorror={this.addHorror}/>
             {this.makeHorrorCard()}
         </div>
