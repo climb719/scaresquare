@@ -22,41 +22,52 @@ class HorrorList extends Component {
     makeHorrorCard() {
         let horrorCards = this.state.horrors
         if(this.state.search){
-            horrorCards = this.state.horrors.filter((horror) => horror.title.toLowerCase().startsWith(this.state.search.toLowerCase()))
+            horrorCards = this.state.horrors.filter((horror) => horror.title.toLowerCase().includes(this.state.search.toLowerCase()))
         }
-        return horrorCards.map(horror => <Horror onVoteClick={this.onVoteClick} key={horror.id} id={horror.id} title={horror.title} year={horror.year} descriptor={horror.descriptor} votes={this.state.votes}/>)
+        return horrorCards.map(horror => <Horror key={horror.id} id={horror.id} title={horror.title} year={horror.year} descriptor={horror.descriptor} votes={horror.votes}/>)
     }
 
     //onVoteClick={this.onVoteClick} 
-    onVoteClick = (id) => {
-        console.log(id)
-        console.log(this.state.votes)
-        const horror = this.state.horrors.find((h) => id === h.id)
-        const url ="http://localhost:3000/horrors"
-        fetch(`${url}/${id}`, {
-            method: 'PATCH', 
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({votes: horror.votes + 1}),
-          })
-          .then(resp => resp.json())
-          .then(data => {
+    // onVoteClick = (id) => {
+    //     console.log(id)
+    //     console.log(this.state.votes)
 
-            console.log('Success:', data);
-            // this.setState(previousState => {
+    //     this.setState((previousState) => {
+    //             return {
+                  
+    //               votes: previousState.votes + 1
+    //             }
+    //           })
+    //         }
+        // const horror = this.state.horrors.find((h) => id === h.id)
+        // const url ="http://localhost:3000/horrors"
+        // fetch(`${url}/${id}`, {
+        //     method: 'PATCH', 
+        //     headers: {
+        //       'Content-Type': 'application/json',
+        //     },
+        //     body: JSON.stringify(horror),
+        //   })
+        //   .then(resp => resp.json())
+        //   .then(data => {
+        //     this.setState((previousState) => {
+        //         const index = previousState.horrors.findIndex((h) => id === h.id)
+        //         return {
+        //             horrors: [...previousState.horrors.slice(0, index), data, ...previousState.horrors.slice(index + 1)]
+        //         }
+        //     })
+        // })
+    //}
+       
+             // this.setState(previousState => {
         //     return {
         //       votes: previousState.votes + 1
         //     }
         //   })
-      //  }
-       })
         //   .catch((error) => {
         //     console.error('Error:', error);
         //   });
         
-    }
-       
         
     //     this.setState({votes: this.state.votes + 1})
     // }
