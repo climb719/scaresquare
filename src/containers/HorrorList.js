@@ -7,7 +7,8 @@ class HorrorList extends Component {
 
     state = {
         horrors: [],
-        search: ""
+        search: "",
+        votes: 0
     }
 
     addHorror = (horrorData) => {
@@ -23,8 +24,21 @@ class HorrorList extends Component {
         if(this.state.search){
             horrorCards = this.state.horrors.filter((horror) => horror.title.toLowerCase().startsWith(this.state.search.toLowerCase()))
         }
-        return horrorCards.map(horror => <Horror key={horror.id} title={horror.title} year={horror.year} descriptor={horror.descriptor} votes={horror.votes}/>)
+        return horrorCards.map(horror => <Horror onVoteClick={this.onVoteClick} key={horror.id} id={horror.id} title={horror.title} year={horror.year} descriptor={horror.descriptor} votes={this.state.votes}/>)
     }
+
+    //onVoteClick={this.onVoteClick} 
+    onVoteClick = (id) => {
+        console.log(id)
+        console.log(this.state.votes)
+        this.setState(previousState => {
+            return {
+              votes: previousState.votes + 1
+            }
+          })
+        }
+    //     this.setState({votes: this.state.votes + 1})
+    // }
 
     componentDidMount(){
         const url ="http://localhost:3000/horrors"
