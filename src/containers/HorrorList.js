@@ -31,12 +31,33 @@ class HorrorList extends Component {
     onVoteClick = (id) => {
         console.log(id)
         console.log(this.state.votes)
-        this.setState(previousState => {
-            return {
-              votes: previousState.votes + 1
-            }
+        const horror = this.state.horrors.find((h) => id === h.id)
+        const url ="http://localhost:3000/horrors"
+        fetch(`${url}/${id}`, {
+            method: 'PATCH', 
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({votes: horror.votes + 1}),
           })
-        }
+          .then(resp => resp.json())
+          .then(data => {
+
+            console.log('Success:', data);
+            // this.setState(previousState => {
+        //     return {
+        //       votes: previousState.votes + 1
+        //     }
+        //   })
+      //  }
+       })
+        //   .catch((error) => {
+        //     console.error('Error:', error);
+        //   });
+        
+    }
+       
+        
     //     this.setState({votes: this.state.votes + 1})
     // }
 

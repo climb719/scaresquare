@@ -1,6 +1,8 @@
-import { Component } from 'react'
+// import { Component } from 'react'
 
-class Horror extends Component {
+// class Horror extends Component {
+
+function Horror(props) {
 
     // state = {
     //     votes: 0
@@ -18,8 +20,8 @@ class Horror extends Component {
        // this.setState({votes: this.state.votes + 1})
     
 
-    render() {
-        const { title, year, descriptor, id, votes, onVoteClick} = this.props
+  //  render() {
+        const { title, year, descriptor, id, votes, onVoteClick} = props
        //console.log(this.props)
     return (
         <div className="card" id={id} >
@@ -30,7 +32,7 @@ class Horror extends Component {
             <button onClick={(e) => onVoteClick(id)}>Vote</button>
         </div>
         )
-    }
+   // }
 }
 
 export default Horror
