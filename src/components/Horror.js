@@ -15,12 +15,12 @@ class Horror extends Component {
             }
           })
         }
-       // this.setState({votes: this.state.votes + 1})
+    //    // this.setState({votes: this.state.votes + 1})
     
 
    render() {
         const { title, year, descriptor, id, votes, onVoteClick} = this.props
-     //  console.log(this.props)
+     console.log(this.props)
     return (
         <div className="card" id={id} >
             <h2 className ="title">{title}</h2>
