@@ -9,7 +9,7 @@ function App() {
     <div>
       <header>
       <h1> Welcome to Scaresquare </h1>  
-      <h4>Get scared, vote here:</h4>
+      <h3>Get scared, vote here:</h3>
       </header>
         <HorrorList />
     </div>

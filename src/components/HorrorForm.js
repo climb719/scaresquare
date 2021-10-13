@@ -9,6 +9,7 @@ export default class HorrorForm extends Component {
     }
 
     handleFormSubmit = (e) => {
+        console.log(e.target)
         e.preventDefault()
         const horror = {...this.state, votes: 0}
         const url ="http://localhost:3000/horrors"

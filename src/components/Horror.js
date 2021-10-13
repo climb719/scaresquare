@@ -25,7 +25,7 @@ class Horror extends Component {
      //  console.log(this.props)
     return (
         <div className="card" id={id} >
-            <h2>{title}</h2>
+            <h2 className ="title">{title}</h2>
             <h3> {year}</h3>
             <p>{descriptor}</p>
             <p>{this.state.votes} Votes</p>

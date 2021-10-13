@@ -68,6 +68,9 @@ header {
   box-shadow: 4px 5px red;
   background-color:rgb(255, 154, 0); 
 }
+h2.title {
+  text-transform: capitalize;
+}
 
 
 button {
