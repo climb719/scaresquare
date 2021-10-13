@@ -12,10 +12,10 @@ class HorrorList extends Component {
     }
 
     addHorror = (horrorData) => {
-        debugger
+        //debugger
        this.setState((prevState) => {
          return {
-            horrors: [...prevState.horrors, horrorData].sort((a, b) => a.title < b.title)
+            horrors: [...prevState.horrors, horrorData]
          } 
        })           
    }
@@ -46,8 +46,7 @@ class HorrorList extends Component {
         this.setState({search: e.target.value})
     }
 
-    render() {
-        //const horrors = horrorsObj.horrors.map(horror => <Horror title={horror.title} year={horror.year} descriptor={horror.descriptor} votes={horror.votes}/>)
+    render() {       
         return (
         <div id="horror-list">
             <div id= "search">

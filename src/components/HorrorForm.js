@@ -11,6 +11,7 @@ export default class HorrorForm extends Component {
     handleFormSubmit = (e) => {
         console.log(e.target)
         e.preventDefault()
+        e.target.reset()
         const horror = {...this.state, votes: 0}
         const url ="http://localhost:3000/horrors"
         fetch(url, {
@@ -23,12 +24,12 @@ export default class HorrorForm extends Component {
           .then(resp => resp.json())
           .then(data => {
               this.props.addHorror(data)
-        //     console.log('Success:', data);
+              this.setState({
+                title: "",
+                year: "",
+                descriptor: ""
+            })
        })
-        //   .catch((error) => {
-        //     console.error('Error:', error);
-        //   });
-        
     }
 
     onFormChange = (e) => {

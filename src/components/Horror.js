@@ -1,16 +1,14 @@
 import { Component } from 'react'
 
 class Horror extends Component {
-
 // function Horror(props) {
-
+    
     state = {
         votes: 0
     }
     
     onVoteClick = (id) => {
         console.log(id)
-        
         this.setState(previousState => {
             return {
               votes: previousState.votes + 1
@@ -36,4 +34,4 @@ class Horror extends Component {
 }
 
 export default Horror
-// <button onClick={(e) => onVoteClick(id)}>Vote</button>
+
