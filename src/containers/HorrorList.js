@@ -28,7 +28,6 @@ class HorrorList extends Component {
     }
     
 
-
     componentDidMount() {
         const url ="http://localhost:3000/horrors"
         fetch(url)
@@ -47,42 +46,27 @@ class HorrorList extends Component {
     }
 
     onVoteClick = (id) => {
-        const url ="http://localhost:3000/horrors"
         const horror = this.state.horrors.find((h) => id === h.id)
-        console.log(horror)
-       // debugger
-        console.log(id)
+        //console.log(horror)
+        // debugger
+        //console.log(id)
         fetch(`http://localhost:3000/horrors/${id}`, {
             method: 'PATCH',
             headers: {
-                'Content-Type': 'application/json',
+                'Content-Type': 'application/json'
             },
-                body: JSON.stringify({votes: parseInt(horror.votes) + 1}),
+            body: JSON.stringify({votes: parseInt(horror.votes) + 1})
             })
-            .then(resp => resp.json())
-            .then(data => {
-                this.setState((previousState) => {
-                    const index = previousState.horrors.findIndex((h) => id === h.id)
-                    return {
-                        horrors: [...previousState.horrors.slice(0, index), data, ...previousState.horrors.slice(index + 1)]
-                    }
-                })
+         .then(resp => resp.json())
+         .then(data => {
+            this.setState((previousState) => {
+            const index = previousState.horrors.findIndex((h) => id === h.id)
+                return {
+                horrors: [...previousState.horrors.slice(0, index), data, ...previousState.horrors.slice(index + 1)]
+                }
+            })
         })
     }
-                //  this.setState({
-                //      horrors: data
-                //  })
-           //  })
-        // }
-               //debugger
-            //     this.setState(previousState => {
-            //     return {
-            //     votes: previousState.votes + 1
-            // }
-       // })
-//     })
-// }
-
 
     render() {       
         return (

@@ -56,9 +56,9 @@ export default class HorrorForm extends Component {
                 <br></br>
                 <textarea required name="descriptor" placeholder="Add some descriptors here..."rows="7" cols="25" onChange={this.onFormChange} value={descriptor} ></textarea> 
                 <br></br>
-                <select required name="format" id="format" onChange={this.onFormChange}>
-                <option defaultValue>Please select:</option>
-                <option value="movie" >&nbsp;&nbsp; Movie 🎥 </option>
+                Horror Format: <select required name="format" id="format" onChange={this.onFormChange}>
+                <option value="" >Please Select</option>
+                <option value="movie">&nbsp;&nbsp; Movie 🎥 </option>
                 <option value="show"> &nbsp;&nbsp; Show 📺 </option>
                 </select>
                 <br></br>

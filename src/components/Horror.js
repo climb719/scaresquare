@@ -1,11 +1,12 @@
 import { Component } from 'react'
-import HorrorList from '../containers/HorrorList'
+//import HorrorList from '../containers/HorrorList'
 
 class Horror extends Component {
 // function Horror(props) {
     
- 
-    
+    // state = {
+    //     votes: 0
+    // }
 
     // onVoteClick = (id) => {
     //     console.log(id)
@@ -28,7 +29,6 @@ class Horror extends Component {
             <p>{descriptor}</p>
             <p>{votes} {votes === '1'? 'Vote' : 'Votes' }</p>
             <button onClick={(e) => onVoteClick(id)}>Vote</button>
-         
         </div>
         )
     }
