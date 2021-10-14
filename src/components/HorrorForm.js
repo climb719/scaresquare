@@ -4,6 +4,7 @@ export default class HorrorForm extends Component {
 
     state = {
         title: "",
+        format: "",
         year: "",
         descriptor: ""
     }
@@ -27,7 +28,8 @@ export default class HorrorForm extends Component {
               this.setState({
                 title: "",
                 year: "",
-                descriptor: ""
+                descriptor: "",
+                format: ""
             })
        })
     }
@@ -43,16 +45,23 @@ export default class HorrorForm extends Component {
 
 
     render() {
-        const { title, year, descriptor } = this.state
+        const { title, format, year, descriptor } = this.state
         return (
             <form id= "horror-form" onSubmit={this.handleFormSubmit}>
                 <strong> Add A New Horror: </strong><br></br>
                 <label>Title: </label>
-                <input type="text" name="title" onChange={this.onFormChange} value={title}/><br></br>
+                <input required type="text" name="title" onChange={this.onFormChange} value={title}/><br></br>
                 <label>Year: </label>
-                <input type="text" name="year" onChange={this.onFormChange} value={year} /><br></br>
+                <input required type="text" name="year" onChange={this.onFormChange} value={year} /><br></br>
                 <br></br>
-                <textarea name="descriptor" placeholder="Add some descriptors here..."rows="7" cols="25" onChange={this.onFormChange} value={descriptor} ></textarea> 
+                <textarea required name="descriptor" placeholder="Add some descriptors here..."rows="7" cols="25" onChange={this.onFormChange} value={descriptor} ></textarea> 
+                <br></br>
+                <select required name="format" id="format" onChange={this.onFormChange}>
+                <option defaultValue>Please select:</option>
+                <option value="movie" >&nbsp;&nbsp; Movie 🎥 </option>
+                <option value="show"> &nbsp;&nbsp; Show 📺 </option>
+                </select>
+                <br></br>
                 <br></br>
                 <input type="submit" value= "Add Horror"/>
             </form>
