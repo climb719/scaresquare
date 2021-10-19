@@ -12,15 +12,15 @@ main {
 }
 #search {
   position: absolute;
-  left:2%;
-  top:13%;
+  left:2.2%;
+  top: 27.2%;
   
 }
 
 #warning {
   position: absolute;
   left:1.5%;
-  top:25%;
+  top:35%;
   right: 85%;
   color:  rgb(136, 30, 228, 0.6);
   background-color: rgba(255, 253, 253, 0.6);
@@ -34,21 +34,39 @@ main {
   background:#fff;
 }
 
+#about {
+  position: absolute;
+  left:1.5%;
+  top:3%;
+  right: 85%;
+  color:  rgb(136, 30, 228, 0.6);
+  background-color: rgba(255, 253, 253, 0.6);
+  padding: 10px;
+
+}
+
+#about:hover {
+  color: rgb(136, 30, 228);
+  border: rgb(136, 30, 228) solid 1px;
+  background:#fff;
+}
+
+
 
 #popular {
   position: absolute;
-  left: 3%;
-  top: 8%;
+  left: 22%;
+  top: 23%;
   background-color: rgb(136, 30, 228, 0.6);
-
   width: max-content;
-  color:black;
+  color:whitesmoke;
   color: -internal-light-dark(black, white);
-  padding: 1px 6px;
+  padding: 4px 7px;
   border-width: 2px;
+  border-radius: 5px;
   border-style: outset;
   border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-  font-size: 13px;
+  font-size: 15px;
 }
 
 #popular:hover {
@@ -58,11 +76,12 @@ main {
 #horror-form {
   position:absolute;
   left:1%;
-  top:55%;
+  top:61%;
 }
 
 #formButton {
   background-color:  rgb(136, 30, 228, 0.6);
+  color:whitesmoke;
 }
 
 #formButton:hover {

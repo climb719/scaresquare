@@ -12,6 +12,7 @@ function App() {
       <h3>Get Scared, Vote Here:</h3>
       </header>
         <HorrorList />
+        <p id="warning"><strong >Warning: </strong>Search for a title before adding it below. If YOU cause duplicate entries, destruction will follow...</p>
     </div>
     </main>
   );
