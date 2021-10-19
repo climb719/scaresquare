@@ -9,7 +9,7 @@ function Horror(props) {
             <h3> {year} </h3>
             <p>{descriptor}</p>
             <p>{votes} {votes === '1'? 'Vote' : 'Votes' }</p>
-            <button onClick={(e) => onVoteClick(id)}>Vote</button>
+            <button id="vote" onClick={(e) => onVoteClick(id)}>Vote</button>
         </div>
         )  
 }

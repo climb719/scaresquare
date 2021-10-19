@@ -63,7 +63,7 @@ export default class HorrorForm extends Component {
                 </select>
                 <br></br>
                 <br></br>
-                <input type="submit" value= "Add Horror"/>
+                <input id="formButton" type="submit" value= "Add Your Horror"/>
             </form>
         )
     }

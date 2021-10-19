@@ -13,46 +13,62 @@ main {
 #search {
   position: absolute;
   left:2%;
-  top:15%;
+  top:13%;
   
 }
 
 #warning {
   position: absolute;
   left:1.5%;
-  top:29%;
+  top:25%;
   right: 85%;
-  color: rgb(140, 6, 6); 
+  color:  rgb(136, 30, 228, 0.6);
   background-color: rgba(255, 253, 253, 0.6);
   padding: 10px;
 
 }
 
 #warning:hover {
-  color: red;
-  border: red solid 1px;
+  color: rgb(136, 30, 228);
+  border: rgb(136, 30, 228) solid 1px;
   background:#fff;
 }
 
 
 #popular {
-  position:absolute;
-  left:2.2%;
-  top:23%;
-  background-color: red;
-  border: black solid 1px;
-  border-radius: 5px;
-  height: 2rem;
+  position: absolute;
+  left: 3%;
+  top: 8%;
+  background-color: rgb(136, 30, 228, 0.6);
+
   width: max-content;
-  color: whitesmoke;
-  font-size: 16px;
+  color:black;
+  color: -internal-light-dark(black, white);
+  padding: 1px 6px;
+  border-width: 2px;
+  border-style: outset;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  font-size: 13px;
+}
+
+#popular:hover {
+  background-color: rgb(136, 30, 228);
 }
 
 #horror-form {
   position:absolute;
   left:1%;
-  top:58%;
+  top:55%;
 }
+
+#formButton {
+  background-color:  rgb(136, 30, 228, 0.6);
+}
+
+#formButton:hover {
+  background-color: rgb(136, 30, 228);
+}
+
 
 header {
   background-color: rgb(247, 95, 28);
@@ -65,8 +81,6 @@ header {
   margin: 1em;
   
 }
-
-
 
 
 .card {
@@ -85,7 +99,7 @@ h2.title {
 }
 
 
-button {
+#vote {
   position: relative;
   background-color: red;
   border: black solid 1px;
