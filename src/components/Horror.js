@@ -1,9 +1,25 @@
-import { Component } from 'react'
+import React from 'react'
+
+function Horror(props) {
+
+    const { title, year, descriptor, id, format, votes, onVoteClick} = props
+    return (
+        <div className="card" id={id} >
+           <span>{format === 'movie'? '🎥' : '📺' }</span> <h2 className ="title">{title}</h2>
+            <h3> {year} </h3>
+            <p>{descriptor}</p>
+            <p>{votes} {votes === '1'? 'Vote' : 'Votes' }</p>
+            <button onClick={(e) => onVoteClick(id)}>Vote</button>
+        </div>
+        )  
+}
+
+export default Horror
+
 //import HorrorList from '../containers/HorrorList'
 
-class Horror extends Component {
-// function Horror(props) {
-    
+// class Horror extends Component {
+
     // state = {
     //     votes: 0
     // }
@@ -19,20 +35,7 @@ class Horror extends Component {
     //    // this.setState({votes: this.state.votes + 1})
 
     
-   render() {
-        const { title, year, descriptor, id, format, votes, onVoteClick} = this.props
-   // console.log(this.props)
-    return (
-        <div className="card" id={id} >
-           <span>{format === 'movie'? '🎥' : '📺' }</span> <h2 className ="title">{title}</h2>
-            <h3> {year} </h3>
-            <p>{descriptor}</p>
-            <p>{votes} {votes === '1'? 'Vote' : 'Votes' }</p>
-            <button onClick={(e) => onVoteClick(id)}>Vote</button>
-        </div>
-        )
-    }
-}
+//    render() {
 
-export default Horror
 
+// if needed to pass down horrors from horrorList - in HL - horrors={this.state.horrors}

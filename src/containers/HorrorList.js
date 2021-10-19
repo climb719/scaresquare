@@ -14,20 +14,31 @@ class HorrorList extends Component {
         //debugger
        this.setState((prevState) => {
          return {
-            horrors: [...prevState.horrors, horrorData]
+            horrors: [...prevState.horrors, horrorData].sort((a, b) => a.title.localeCompare(b.title))
          } 
        })           
    }
 
-    makeHorrorCard() {
+   onSortClick = (e) => {
+       console.log(e.target)
+       let horrorCards = this.state.horrors
+       let sorted = horrorCards.sort((a, b) => parseFloat(b.votes) - parseFloat(a.votes))
+
+       console.log(sorted)
+       this.setState({
+        horrors: sorted
+    })
+   }
+
+    makeHorrorCards() {
         let horrorCards = this.state.horrors
-        if(this.state.search){
+       
+        if (this.state.search) {
             horrorCards = this.state.horrors.filter((horror) => horror.title.toLowerCase().includes(this.state.search.toLowerCase()))
         }
-        return horrorCards.map(horror => <Horror key={horror.id} id={horror.id} title={horror.title} year={horror.year} descriptor={horror.descriptor.toLowerCase()} votes={horror.votes} format={horror.format} onVoteClick={this.onVoteClick} horrors={this.state.horrors}/>)
+        return horrorCards.map(horror => <Horror key={horror.id} id={horror.id} title={horror.title} year={horror.year} descriptor={horror.descriptor.toLowerCase()} votes={horror.votes} format={horror.format} onVoteClick={this.onVoteClick}/>)
     }
     
-
     componentDidMount() {
         const url ="http://localhost:3000/horrors"
         fetch(url)
@@ -75,9 +86,10 @@ class HorrorList extends Component {
                 <label><strong>Search For A Horror:</strong></label><br></br>
                 <input type="text"  onChange={this.handleSearchChange}/> 
             </div>
+            <button id="popular" onClick={this.onSortClick}>Sort by Most Popular</button>
             <p id="warning"><strong >Warning: </strong>You must search for a title to make sure it does not exist on Scaresquare before adding it below. If YOU cause duplicate entries, destruction will follow...</p>
             <HorrorForm addHorror={this.addHorror}/>
-            {this.makeHorrorCard()}
+            {this.makeHorrorCards()}
         </div>
         )
     }

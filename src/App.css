@@ -20,7 +20,7 @@ main {
 #warning {
   position: absolute;
   left:1.5%;
-  top:25%;
+  top:29%;
   right: 85%;
   color: rgb(140, 6, 6); 
   background-color: rgba(255, 253, 253, 0.6);
@@ -32,14 +32,26 @@ main {
   color: red;
   border: red solid 1px;
   background:#fff;
-
 }
 
+
+#popular {
+  position:absolute;
+  left:2.2%;
+  top:23%;
+  background-color: red;
+  border: black solid 1px;
+  border-radius: 5px;
+  height: 2rem;
+  width: max-content;
+  color: whitesmoke;
+  font-size: 16px;
+}
 
 #horror-form {
   position:absolute;
   left:1%;
-  top:55%;
+  top:58%;
 }
 
 header {

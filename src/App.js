@@ -1,4 +1,4 @@
-//import logo from './logo.svg';
+//import logo from './logo.svg';q
 import './App.css';
 import HorrorList from './containers/HorrorList'
 
@@ -8,8 +8,8 @@ function App() {
     <main>
     <div>
       <header>
-      <h1> Welcome to Scaresquare </h1>  
-      <h3>Get scared, vote here:</h3>
+      <h1> Welcome to SCARESQUARE </h1>  
+      <h3>Get Scared, Vote Here:</h3>
       </header>
         <HorrorList />
     </div>
