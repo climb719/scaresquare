@@ -7,7 +7,8 @@ class HorrorList extends Component {
 
     state = {
         horrors: [],
-        search: ""
+        search: "",
+        isSorted: false
     }
 
     addHorror = (horrorData) => {
@@ -22,13 +23,20 @@ class HorrorList extends Component {
    onSortClick = (e) => {
        console.log(e.target)
        let horrorCards = this.state.horrors
-       let sorted = horrorCards.sort((a, b) => parseFloat(b.votes) - parseFloat(a.votes))
-
-       console.log(sorted)
-       this.setState({
-        horrors: sorted
-    })
+       let isSorted = !this.state.isSorted
+       if (!this.state.isSorted) {
+       e.target.innerText = "Back to Alphabetical"
+        horrorCards = horrorCards.sort((a, b) => parseFloat(b.votes) - parseFloat(a.votes))
+       } else {
+        e.target.innerText = "Sort By Most Popular"
+           horrorCards.sort((a, b) => a.title.localeCompare(b.title))
+       }
+        this.setState({
+         horrorCards, isSorted
+        })
+   
    }
+
 
     makeHorrorCards() {
         let horrorCards = this.state.horrors
